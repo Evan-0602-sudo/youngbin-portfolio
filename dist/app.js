@@ -25,10 +25,10 @@ const artifactLabels = { 'Analysis Document': '분석 문서', 'Excel / Google S
 const badge = (status) => `<span class="status ${statusClasses[status] || 'pending'}">${escapeHTML(statusLabels[status] || status)}</span>`;
 const assetURL = (url) => typeof url === 'string' && (/^https:\/\//i.test(url) || /^(?:\.\/)?assets\/[a-zA-Z0-9_./% -]+$/.test(url)) ? url : '';
 function artifactLinks(items) {
-  return items.map((item) => {
+  return items.filter((item) => assetURL(item.url)).map((item) => {
     const url = assetURL(item.url);
     const label = artifactLabels[item.label] || item.label;
-    return url ? `<a class="artifact" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)} ↗</a>` : `<span class="artifact unavailable">${escapeHTML(label)}<small>준비 중</small></span>`;
+    return `<a class="artifact" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)} ↗</a>`;
   }).join('');
 }
 
@@ -77,7 +77,7 @@ function renderProcess(selector, steps) {
 renderProcess('#service-process', data.serviceSteps);
 renderProcess('#ai-process', data.aiSteps);
 document.querySelector('#data-topics').innerHTML = tags(data.dataAnalysis.topics);
-document.querySelector('#data-evidence').innerHTML = data.dataAnalysis.images.length || data.dataAnalysis.documents.length ? data.dataAnalysis.images.map((item) => assetURL(item.src) ? `<figure><img src="${escapeHTML(assetURL(item.src))}" alt="${escapeHTML(item.alt)}" loading="lazy"><figcaption>${escapeHTML(item.caption || '')}</figcaption></figure>` : '').join('') + artifactLinks(data.dataAnalysis.documents) : '<div class="evidence-placeholder">데이터 시트 · 그래프 · 분석 문서<br><span>실제 자료를 수집한 후 공개합니다.</span></div>';
+document.querySelector('#data-evidence').innerHTML = data.dataAnalysis.images.map((item) => assetURL(item.src) ? `<figure><img src="${escapeHTML(assetURL(item.src))}" alt="${escapeHTML(item.alt)}" loading="lazy"><figcaption>${escapeHTML(item.caption || '')}</figcaption></figure>` : '').join('') + artifactLinks(data.dataAnalysis.documents);
 document.querySelector('#skills-grid').innerHTML = data.skills.map((skill, index) => `<article class="skill-card"><span class="skill-number">0${index + 1}</span><h3>${escapeHTML(skill.title)}</h3><p>${escapeHTML(skill.subtitle)}</p><div class="tags">${tags(skill.items)}</div></article>`).join('');
 
 document.querySelector('#contact-links').innerHTML = data.contacts.map((contact) => {
