@@ -1,10 +1,10 @@
 // 게임 정보, 프로젝트, 스킬, 연락처는 이 파일에서 수정합니다.
-// 실제 연락처로 교체하면 placeholder를 false로 변경하세요.
+// 연락처 링크는 이 배열에서 수정합니다.
 window.PORTFOLIO = {
   contacts: [
-    { label: 'Email', text: 'youngbin@example.com', url: 'mailto:youngbin@example.com', placeholder: true },
-    { label: 'GitHub', text: 'github.com/youngbin', url: 'https://github.com/youngbin', placeholder: true },
-    { label: 'Notion', text: 'Portfolio Link', url: '', placeholder: true }
+    { label: '이메일', text: 'cyb050602@gmail.com', url: 'mailto:cyb050602@gmail.com' },
+    { label: '전화번호', text: '010-3059-3201', url: 'tel:01030593201' },
+    { label: 'GitHub', text: 'Evan-0602-sudo/youngbin-portfolio', url: 'https://github.com/Evan-0602-sudo/youngbin-portfolio' }
   ],
   coreGames: [
     { name: 'League of Legends', genre: 'MOBA / AOS', metric: '10,000+', unit: '게임', period: '시즌 3부터 장기간 플레이', detail: '복수 계정 기준 누적 10,000게임 이상', description: '장기간의 챔피언, 아이템, 메타, 밸런스 및 시스템 변화 경험', tags: ['메타 & 밸런스', '시스템 변화'] },
@@ -37,7 +37,7 @@ window.PORTFOLIO = {
   {
     "id": "maplestory",
     "game": "MapleStory",
-    "title": "New & Returning User Retention Analysis",
+    "title": "신규·복귀 유저 정착 경험 분석",
     "status": "Analysis in Progress",
     "summary": "장기 플레이와 챌린저스 서버의 새로운 육성 경험에서 출발한 신규·복귀 유저 정착 가설입니다.",
     "question": "신규·복귀 유저는 어느 구간까지 자연스럽게 성장하고, 어느 순간부터 피로를 느끼거나 떠날 가능성이 커질까?",
@@ -135,7 +135,7 @@ window.PORTFOLIO = {
   {
     "id": "fc-online",
     "game": "FC Online",
-    "title": "Event-driven Retention Analysis",
+    "title": "이벤트 중심 유저의 재방문 구조 분석",
     "status": "Analysis in Progress",
     "summary": "경기 플레이 빈도가 낮아도 다시 접속했던 이유를 이벤트와 스쿼드 성장의 관점에서 살펴봅니다.",
     "question": "핵심 플레이를 많이 하지 않는 유저도 이벤트와 성장 시스템으로 유지될 수 있을까? 이 유저를 경기 플레이로 다시 연결할 수 있을까?",
@@ -239,8 +239,8 @@ window.PORTFOLIO = {
   },
   {
     "id": "mobile",
-    "game": "Mobile Live Service",
-    "title": "Mobile User Experience Analysis",
+    "game": "모바일 라이브 서비스",
+    "title": "모바일 게임의 유저 경험 비교 분석",
     "status": "Project Preparing",
     "summary": "현재 플레이 중인 NIKKE 또는 Brown Dust 2 중 하나를 선택해 분석할 예정입니다.",
     "question": "일상 루틴과 수집·성장·보상은 다시 접속할 이유와 피로에 어떻게 연결될까?",
@@ -337,43 +337,43 @@ window.PORTFOLIO = {
   }
 ],
   "interests": [
-  "User Retention",
-  "User Churn",
-  "Live Service",
-  "User Experience",
+  "유저 리텐션",
+  "유저 이탈",
+  "라이브 서비스",
+  "유저 경험",
   "BM",
-  "Event Design",
-  "Game Economy",
-  "Data Analysis",
-  "AI-assisted Workflow"
+  "이벤트 설계",
+  "게임 경제",
+  "데이터 분석",
+  "AI 보조 업무 과정"
 ],
   "serviceSteps": [
   {
-    "title": "Play",
+    "title": "플레이",
     "text": "직접 유저 입장에서 플레이"
   },
   {
-    "title": "Observe",
+    "title": "관찰",
     "text": "재미, 불편함, 반복 행동, 이벤트, 보상, UI와 유저 반응 관찰"
   },
   {
-    "title": "Question",
+    "title": "질문",
     "text": "왜 이런 행동이 발생하는지 질문"
   },
   {
-    "title": "Hypothesize",
+    "title": "가설 설정",
     "text": "가능한 원인을 가설로 설정"
   },
   {
-    "title": "Analyze",
+    "title": "분석",
     "text": "게임 데이터, 시스템, BM, 경쟁 게임과 유저 반응 조사"
   },
   {
-    "title": "Propose",
+    "title": "개선안 제안",
     "text": "근거를 바탕으로 개선안 제시"
   },
   {
-    "title": "Verify",
+    "title": "검증",
     "text": "효과를 검증하고 부작용과 한계도 검토"
   }
 ],
@@ -395,70 +395,70 @@ window.PORTFOLIO = {
 },
   "aiSteps": [
   {
-    "title": "Think",
+    "title": "문제 정의",
     "text": "문제와 목표를 먼저 직접 정의"
   },
   {
-    "title": "Ask",
+    "title": "질문 설계",
     "text": "필요한 프롬프트와 질문 작성"
   },
   {
-    "title": "Research",
+    "title": "자료 탐색",
     "text": "AI로 아이디어와 자료 탐색"
   },
   {
-    "title": "Verify",
+    "title": "직접 검증",
     "text": "AI가 제시한 정보와 결과를 직접 검토"
   },
   {
-    "title": "Improve",
+    "title": "보완",
     "text": "본인의 판단과 경험을 반영해 수정"
   },
   {
-    "title": "Produce",
+    "title": "결과물 제작",
     "text": "분석자료, 데이터, 문서, 웹사이트 등 결과물 제작"
   }
 ],
   "skills": [
   {
-    "title": "Game Service",
+    "title": "게임 서비스 분석",
     "subtitle": "관찰과 가설 검증 역량을 키우는 중",
     "items": [
-      "Game Service Analysis",
-      "User Retention Analysis",
-      "User Experience Analysis",
-      "Live Service Analysis",
-      "Competitor Research",
-      "BM Analysis"
+      "게임 서비스 구조 분석",
+      "유저 리텐션 분석",
+      "유저 경험 분석",
+      "라이브 서비스 분석",
+      "경쟁작 조사",
+      "BM 구조 분석"
     ]
   },
   {
-    "title": "Data",
+    "title": "데이터 활용",
     "subtitle": "게임 서비스를 숫자로 이해하기 위한 학습",
     "items": [
       "Excel",
       "Google Sheets",
-      "Basic Data Analysis"
+      "기초 데이터 분석"
     ]
   },
   {
-    "title": "AI & Productivity",
+    "title": "AI 활용 및 생산성",
     "subtitle": "직접 판단하고 검토하는 AI 활용",
     "items": [
       "ChatGPT",
       "Codex",
-      "Prompt Design",
-      "AI-assisted Research",
-      "Vibe Coding"
+      "프롬프트 설계",
+      "AI 보조 리서치",
+      "AI 보조 프로토타이핑"
     ]
   },
   {
-    "title": "Communication",
+    "title": "문서화 및 커뮤니케이션",
     "subtitle": "분석을 정리하고 전달하는 도구",
     "items": [
       "PowerPoint",
       "Notion",
-      "Figma Basic"
+      "Figma 기초"
     ]
   }
 ],
