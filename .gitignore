@@ -1,0 +1,21 @@
+# Local credentials and private configuration
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+secrets*.json
+.npmrc
+.netrc
+# Local tools and temporary files
+node_modules/
+.netlify/
+.vercel/
+.codex/
+.agents/
+.sites-runtime/
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db
+# dist contains authored static source and must be committed.

@@ -1,0 +1,81 @@
+# 최영빈 포트폴리오
+
+게임 사업 PM / 게임 운영·라이브 서비스 지원을 위한 반응형 단일 페이지입니다. HTML, CSS, JavaScript만 사용하며 외부 패키지, 폰트, 이미지, 백엔드 없이 실행됩니다.
+
+## 폴더 구조
+
+```text
+포트폴리오/
+├── dist/              # 배포할 정적 파일이자 직접 수정하는 소스
+│   ├── index.html     # 페이지 구조, Hero, About, 프로필, Contact 문구
+│   ├── styles.css     # 색상, 레이아웃, 반응형, 최소한의 전환 효과
+│   ├── content.js     # 게임 경험, 프로젝트, 스킬, 연락처 데이터
+│   └── app.js         # 목록 렌더링, 모바일 메뉴, 섹션 등장·탐색
+└── README.md
+```
+
+## 로컬 실행
+
+가장 간단하게 `dist/index.html`을 브라우저에서 열면 됩니다. 빌드나 설치가 필요 없습니다.
+
+Python이 설치되어 있다면 프로젝트 폴더에서 아래 명령으로 정적 서버를 실행할 수도 있습니다.
+
+```sh
+python -m http.server 8000 --directory dist
+```
+
+브라우저에서 http://localhost:8000 을 엽니다. 종료는 Ctrl+C입니다. VS Code의 Live Server로 `dist/index.html`을 열어도 됩니다.
+
+## 내용 수정
+
+- 이름, 소개, 학력, Hero와 섹션 문구: `dist/index.html`
+- 게임 정보: `dist/content.js`의 `coreGames`, `experiencedGames`, `mobileGames`, `pastMobileGames`. 기간은 자동 증가하지 않습니다. `featured: true`는 중간 카드, 생략하면 작은 목록입니다. 선택 항목 `description`은 설명, `caseStudy`는 연결할 사례 id입니다.
+- Case Study 추가: `dist/content.js`의 `caseStudies` 배열에 기존 객체를 복사하고 고유한 `id`, `game`, `title`, `status`, `summary`, `question`, `observation`, `hypothesis`, `steps`, `artifacts`를 수정하세요. 12단계 `steps`는 `label`, `status`, `text`로 구성됩니다. `loop`는 선택 항목입니다.
+- 상태: `Observation`은 개인 관찰, `Hypothesis`는 미검증 가설, `Analysis in Progress`는 진행 중, `Data to be Added`는 자료 대기, `Verified Result`는 근거를 확보한 검증 결과입니다. 현재 검증된 결과는 없습니다. 준비 단계는 `Project Preparing`을 사용합니다.
+- 사례 자료 연결: 각 `caseStudies[].artifacts`의 `url`에 실제 문서 주소를 입력하세요. 빈 값이면 Coming Soon이며 링크가 생성되지 않습니다. `label`은 링크 이름입니다.
+- 데이터 분석: `dataAnalysis.topics`는 분석 예정 주제입니다. `dataAnalysis.images`에 `{ src: 'assets/chart.png', alt: '이미지 내용 설명', caption: '데이터 출처와 해석' }` 형태를 추가하세요. 파일은 `dist/assets/` 폴더를 만들어 저장합니다. `dataAnalysis.documents`에는 `{ label: '분석 시트', url: 'https://실제주소' }` 형태로 추가합니다. 이미지나 문서를 공개한 뒤 `index.html`의 Coming Soon 및 분석 전 안내도 실제 진행 상황에 맞춰 바꾸세요.
+- 파일 주소는 `assets/...` 상대 경로나 `https://` 주소를 지원합니다. PDF·PPT·XLSX도 `dist/assets/`에 저장한 뒤 연결할 수 있습니다. 실제 자료를 만들기 전 가짜 URL은 넣지 마세요.
+- 서비스 사고 과정과 AI 활용: `serviceSteps`, `aiSteps`
+- 관심 분야와 스킬: `interests`, `skills`
+- 연락처: `contacts`의 `text`, `url`, `placeholder`. 실제 주소 입력 후 `placeholder: false`로 변경하세요.
+- 디자인: `dist/styles.css`, 표시 동작: `dist/app.js`
+
+실제 취업 지원 전 연락처, 플레이 기간, 학적 정보 및 프로젝트 진행 상태가 사실과 일치하는지 확인하세요. 새 사례는 자동으로 화면에 추가됩니다.
+
+## Vercel 배포
+
+1. 이 폴더를 GitHub 저장소에 올립니다.
+2. Vercel에서 Add New → Project로 해당 저장소를 가져옵니다.
+3. Framework Preset은 **Other**, Root Directory는 **dist**로 지정합니다.
+4. Build Command와 Install Command는 비워 두고, Output Directory는 **.**로 지정합니다.
+5. Deploy를 실행합니다. 이후 저장소 변경을 push하면 다시 배포됩니다.
+
+## GitHub Pages 배포
+
+Pages의 브랜치 배포는 `/dist`를 직접 선택할 수 없으므로 **dist 안의 네 파일을 배포용 저장소 루트에 업로드**하는 방법이 가장 간단합니다.
+
+1. GitHub에 배포용 저장소를 만들고 `dist` 안의 파일을 저장소 루트에 올립니다.
+2. Settings → Pages → Build and deployment에서 **Deploy from a branch**를 선택합니다.
+3. Branch는 **main**, 폴더는 **/(root)**를 선택하고 저장합니다.
+4. 배포 완료 후 표시되는 주소로 접속합니다. 파일 경로가 상대 경로이므로 프로젝트 하위 주소에서도 동작합니다.
+
+현재 소스 폴더 구조를 유지하려면 GitHub Actions에서 `dist`를 Pages 아티팩트로 업로드하는 워크플로를 별도로 구성할 수 있습니다.
+
+## 접근성·동작
+
+키보드로 메뉴와 프로젝트 상세를 조작할 수 있습니다. Case Study의 분석 과정은 브라우저 기본 `details` 요소로 펼쳐집니다. 모바일 메뉴는 Escape로 닫히며, 운영체제의 동작 줄이기 설정을 존중합니다. 외부 웹 링크는 새 탭으로 열립니다.
+
+### 게임 추가와 표시 크기
+
+`dist/content.js`에서 해당 배열에 항목을 추가합니다. `coreGames`는 핵심 경험용 큰 카드입니다. `experiencedGames`와 `mobileGames`는 `name`, `genre`, `duration`, 선택적인 `note`를 사용하며, `featured: true`이면 중간 카드로, 생략하면 작은 목록으로 표시됩니다. 과거 모바일게임은 `pastMobileGames`에 이름 문자열만 추가하면 태그로 표시됩니다. 시간이나 기간은 자동 추정하지 않습니다.
+
+## Netlify 배포
+
+GitHub 저장소를 Netlify의 Import an existing project에서 연결합니다.
+
+- Base directory: 비워 두기 (저장소 루트)
+- Build command: 비워 두기 (별도 빌드 없음)
+- Publish directory: `dist`
+- 환경 변수: 필요 없음
+
+루트의 `netlify.toml`에도 배포 폴더가 지정되어 있습니다. `npm run build`는 사용하지 않습니다. 배포 완료 후 Netlify가 제공하는 HTTPS 주소를 제출하세요. 로컬 `127.0.0.1` 주소는 다른 사람이 접속할 수 없습니다.

@@ -1,0 +1,3 @@
+[build]
+  publish = "dist"
+  # Plain HTML/CSS/JavaScript: no build command or dependencies required.
