@@ -1,6 +1,6 @@
 # 최영빈 포트폴리오
 
-게임 사업 PM / 게임 운영·라이브 서비스 지원을 위한 반응형 단일 페이지입니다. HTML, CSS, JavaScript만 사용하며 외부 패키지, 폰트, 이미지, 백엔드 없이 실행됩니다.
+게임 사업 PM / 게임 운영·라이브 서비스 지원을 위한 반응형 단일 페이지입니다. HTML, CSS, JavaScript만 사용하며 외부 패키지와 백엔드 없이 실행됩니다.
 
 ## 폴더 구조
 
@@ -10,7 +10,8 @@
 │   ├── index.html     # 페이지 구조, Hero, About, 프로필, Contact 문구
 │   ├── styles.css     # 밝은 색상 체계, 레이아웃, 반응형, 전환 효과
 │   ├── content.js     # 게임 경험, 프로젝트, 스킬, 연락처 데이터
-│   └── app.js         # 목록 렌더링, 프로젝트 모달, 모바일 메뉴, 섹션 탐색
+│   ├── app.js         # 목록 렌더링, 프로젝트 모달, 모바일 메뉴, 섹션 탐색
+│   └── assets/        # 프로젝트 증빙 이미지와 별도 분석 문서
 └── README.md
 ```
 
@@ -31,7 +32,7 @@ python -m http.server 8000 --directory dist
 - 이름, 소개, 학력, Hero와 섹션 문구: `dist/index.html`
 - 게임 정보: `dist/content.js`의 `coreGames`, `experiencedGames`, `mobileGames`, `pastMobileGames`. 기간은 자동 증가하지 않습니다. `featured: true`는 중간 카드, 생략하면 작은 목록입니다. 선택 항목 `description`은 설명, `caseStudy`는 연결할 사례 id입니다.
 - Case Study 추가: `dist/content.js`의 `caseStudies` 배열에 기존 객체를 복사하고 고유한 `id`, `game`, `title`, `status`, `summary`, `question`, `observation`, `hypothesis`, `steps`, `artifacts`를 수정하세요. 12단계 `steps`는 `label`, `status`, `text`로 구성됩니다. `loop`는 선택 항목입니다.
-- 상태: `Observation`은 개인 관찰, `Hypothesis`는 미검증 가설, `Analysis in Progress`는 진행 중, `Data to be Added`는 자료 대기, `Verified Result`는 근거를 확보한 검증 결과입니다. 현재 검증된 결과는 없습니다. 준비 단계는 `Project Preparing`을 사용합니다.
+- 상태: `Observation`은 개인 관찰, `Hypothesis`는 미검증 가설, `Analysis in Progress`는 진행 중, `Data to be Added`는 자료 대기, `Verified Result`는 근거를 확보한 검증 결과입니다. 준비 단계는 `Project Preparing`을 사용합니다.
 - 사례 자료 연결: 각 `caseStudies[].artifacts`의 `url`에 실제 문서 주소를 입력하세요. 빈 값이면 준비 중으로 표시되며 링크가 생성되지 않습니다. `label`은 링크 이름입니다.
 - 데이터 분석: `dataAnalysis.topics`는 분석 예정 주제입니다. `dataAnalysis.images`에 `{ src: 'assets/chart.png', alt: '이미지 내용 설명', caption: '데이터 출처와 해석' }` 형태를 추가하세요. 파일은 `dist/assets/` 폴더를 만들어 저장합니다. `dataAnalysis.documents`에는 `{ label: '분석 시트', url: 'https://실제주소' }` 형태로 추가합니다. 이미지나 문서를 공개한 뒤 `index.html`의 Coming Soon 및 분석 전 안내도 실제 진행 상황에 맞춰 바꾸세요.
 - 파일 주소는 `assets/...` 상대 경로나 `https://` 주소를 지원합니다. PDF·PPT·XLSX도 `dist/assets/`에 저장한 뒤 연결할 수 있습니다. 실제 자료를 만들기 전 가짜 URL은 넣지 마세요.
