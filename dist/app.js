@@ -21,7 +21,7 @@ document.querySelector('#interest-tags').innerHTML = tags(data.interests);
 const statusClasses = { Observation: 'observation', Hypothesis: 'hypothesis', 'Analysis in Progress': 'progress', 'Data to be Added': 'pending', 'Verified Result': 'verified', 'Case Study Complete': 'verified', 'Project Preparing': 'pending' };
 const statusLabels = { Observation: '개인 관찰', Hypothesis: '미검증 가설', 'Analysis in Progress': '분석 진행 중', 'Data to be Added': '자료 준비 중', 'Verified Result': '검증 완료', 'Case Study Complete': '사례 분석 완료', 'Project Preparing': '프로젝트 준비 중' };
 const stepLabels = { 'Personal Experience': '직접 경험', Observation: '관찰', Question: '핵심 질문', Hypothesis: '가설', 'Data to Verify': '검증할 자료', Analysis: '분석', Insight: '인사이트', Proposal: '개선 제안', 'Expected Effect': '기대 효과', 'Risk / Trade-off': '위험 및 고려사항', Limitation: '분석 한계', 'What I Learned': '배운 점' };
-const artifactLabels = { 'Analysis Document': '분석 문서', 'Excel / Google Sheets': '데이터 시트', PPT: '발표 자료', Notion: 'Notion 정리', Screenshot: '화면 자료', 'Research Sources': '조사 출처' };
+const artifactLabels = { 'Analysis Document': '분석 문서', 'Excel / Google Sheets': '데이터 시트', PPT: '발표 자료', Notion: 'Notion 정리', Screenshot: '화면 자료', 'Research Sources': '조사 출처', '심볼 강화 비용 계산표': '심볼 강화 비용 계산표' };
 const badge = (status) => `<span class="status ${statusClasses[status] || 'pending'}">${escapeHTML(statusLabels[status] || status)}</span>`;
 const assetURL = (url) => typeof url === 'string' && (/^https:\/\//i.test(url) || /^(?:\.\/)?assets\/[a-zA-Z0-9_./% -]+$/.test(url)) ? url : '';
 function artifactLinks(items) {
