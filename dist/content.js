@@ -437,6 +437,7 @@ window.PORTFOLIO = {
     ],
     "steps": [
       { "label": "Personal Experience", "status": "Partial Evidence", "text": "제시한 두 계정 화면에서 4,479시간과 1,081시간을 확인했습니다. 합계는 5,560시간이며 두 계정을 직접 육성·플레이했다는 부분은 본인 설명에 근거합니다. 친구 계정 플레이는 제외했습니다." },
+      { "label": "Data to Verify", "status": "Verified Result", "text": "2026년 9월 28일 OP.GG 공개 프로필에서 '모 찌#0602' 계정과 레벨 134, 판테온 숙련도 10·81,849점을 확인했습니다. 계정과 주 사용 챔피언을 보조하는 자료이며, 전체 플레이 시간이나 과거 모드 이동을 증명하는 근거로 사용하지 않습니다." },
       { "label": "Observation", "status": "Observation", "text": "형을 통해 유입됐고 초기에는 미스 포츈 원딜을 플레이했습니다. 중학생 시절 친구, 승부욕과 티어 상승을 이유로 가장 많이 이용했습니다." },
       { "label": "Observation", "status": "Observation", "text": "2024년 하반기부터 이용 빈도가 줄었고 입대 전후에 가장 적게 플레이했습니다. 증강 칼바람 출시 후 제한 해제 능력치와 무작위 조합의 재미로 복귀했습니다." },
       { "label": "Observation", "status": "Observation", "text": "증강 칼바람 출시 직후 높은 빈도로 이용했으며, 개편 후 체감 재미가 줄자 유사한 변동성을 제공하는 아레나로 이동했습니다." },
@@ -450,7 +451,9 @@ window.PORTFOLIO = {
       { "label": "Limitation", "status": "Observation", "text": "5,560시간은 제시 화면으로 확인했지만 모드별 판수는 개인 회상입니다. 장기 이용자 1인의 사례이므로 다른 이용자에게 일반화하려면 인터뷰와 모드 이동 로그가 필요합니다." },
       { "label": "What I Learned", "status": "Observation", "text": "플레이 감소를 게임 전체 이탈로 단정하기보다 모드 간 이동과 소셜 조건을 함께 봐야 하며, 플레이 동기와 팬덤 구매 동기도 분리해 해석해야 합니다." }
     ],
-    "artifacts": []
+    "artifacts": [
+      { "label": "Research Sources", "url": "https://op.gg/lol/summoners/kr/%EB%AA%A8%20%EC%B0%8C-0602" }
+    ]
   },
   {
     "id": "fc-online",
@@ -708,6 +711,7 @@ window.PORTFOLIO = {
     "메이플 · 보스 격파 타임라인",
     "메이플 · 260 이후 행동 흐름",
     "LoL · 계정별 화면상 플레이 시간",
+    "LoL · OP.GG 공개 프로필",
     "LoL · 장기 이용 동기 변화",
     "LoL · 모드 간 이동 퍼널",
     "LoL · e스포츠 팬덤 구매 동기"
