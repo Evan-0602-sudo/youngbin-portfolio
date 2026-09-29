@@ -39,14 +39,14 @@ function artifactLinks(items) {
 }
 
 const visibleCaseStudies = data.caseStudies.filter((study) => study.visible !== false);
-const featuredCaseIds = new Set(['maplestory', 'maple-idle', 'cookie-run-kingdom']);
+const featuredCaseIds = new Set(['maplestory']);
 const featuredCaseStudies = visibleCaseStudies.filter((study) => featuredCaseIds.has(study.id));
 const secondaryCaseStudies = visibleCaseStudies.filter((study) => !featuredCaseIds.has(study.id));
 const renderCaseCards = (studies) => studies.map((study) => {
   const index = visibleCaseStudies.indexOf(study);
   return `<article class="case-card"><div class="case-folder" aria-hidden="true"></div><div class="case-card-top"><span>0${index + 1}</span>${badge(study.status)}</div><p class="case-game">${escapeHTML(study.game)}</p><h3>${escapeHTML(study.title)}</h3><p>${escapeHTML(study.summary)}</p><button type="button" class="case-open" data-open-case="${escapeHTML(study.id)}">프로젝트 자세히 보기 <span aria-hidden="true">→</span></button></article>`;
 }).join('');
-document.querySelector('#case-studies').innerHTML = `<div class="case-card-grid">${renderCaseCards(featuredCaseStudies)}</div>${secondaryCaseStudies.length ? `<details class="more-projects"><summary>보조 분석 프로젝트 ${secondaryCaseStudies.length}개 보기 <span>League of Legends · Seven Knights Re:BIRTH</span></summary><div class="case-card-grid">${renderCaseCards(secondaryCaseStudies)}</div></details>` : ''}`;
+document.querySelector('#case-studies').innerHTML = `<div class="case-card-grid">${renderCaseCards(featuredCaseStudies)}</div>${secondaryCaseStudies.length ? `<details class="more-projects"><summary>추가 분석 ${secondaryCaseStudies.length}개 보기 <span>${escapeHTML(secondaryCaseStudies.map((study) => study.game).join(' · '))}</span></summary><div class="case-card-grid">${renderCaseCards(secondaryCaseStudies)}</div></details>` : ''}`;
 const dialog = document.createElement('dialog');
 dialog.className = 'case-dialog';
 dialog.setAttribute('aria-labelledby', 'case-dialog-title');
@@ -98,8 +98,8 @@ function renderProcess(selector, steps) {
 }
 renderProcess('#service-process', data.serviceSteps);
 renderProcess('#ai-process', data.aiSteps);
-const primaryTopics = data.dataAnalysis.topics.slice(0, 8);
-const additionalTopics = data.dataAnalysis.topics.slice(8);
+const primaryTopics = data.dataAnalysis.topics.slice(0, 4);
+const additionalTopics = data.dataAnalysis.topics.slice(4);
 document.querySelector('#data-topics').innerHTML = `${tags(primaryTopics)}${additionalTopics.length ? `<details class="topic-more"><summary>근거 항목 ${additionalTopics.length}개 더 보기</summary><div class="tags">${tags(additionalTopics)}</div></details>` : ''}`;
 document.querySelector('#data-evidence').innerHTML = data.dataAnalysis.images.map((item) => assetURL(item.src) ? `<figure><img src="${escapeHTML(assetURL(item.src))}" alt="${escapeHTML(item.alt)}" loading="lazy"><figcaption>${escapeHTML(item.caption || '')}</figcaption></figure>` : '').join('') + artifactLinks(data.dataAnalysis.documents);
 document.querySelector('#skills-grid').innerHTML = data.skills.map((skill, index) => `<article class="skill-card"><span class="skill-number">0${index + 1}</span><h3>${escapeHTML(skill.title)}</h3><p>${escapeHTML(skill.subtitle)}</p><div class="tags">${tags(skill.items)}</div></article>`).join('');
