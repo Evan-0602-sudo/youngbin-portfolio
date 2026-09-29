@@ -2,12 +2,6 @@ const data = window.PORTFOLIO;
 const escapeHTML = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const tags = (items) => items.map((item) => `<span class="tag">${escapeHTML(item)}</span>`).join('');
 
-// 채용 검토 흐름을 위해 대표 프로젝트를 플레이 목록보다 먼저 배치합니다.
-const main = document.querySelector('main');
-const projectsSection = document.querySelector('#projects');
-const experienceSection = document.querySelector('#experience');
-if (main && projectsSection && experienceSection) main.insertBefore(projectsSection, experienceSection);
-
 document.querySelector('#core-games').innerHTML = data.coreGames.map((game, index) => `<article class="core-card"><div class="card-top"><span class="eyebrow">${escapeHTML(game.genre)}</span><span class="card-index">0${index + 1}</span></div><h4>${escapeHTML(game.name)}</h4><div class="metric">${escapeHTML(game.metric)}<span>${escapeHTML(game.unit)}</span></div><p class="period">${escapeHTML(game.period)}</p><p class="game-detail">${escapeHTML(game.detail)}</p><p class="game-description">${escapeHTML(game.description)}</p><div class="tags">${tags(game.tags)}</div></article>`).join('');
 
 function renderGames(selector, games) {
