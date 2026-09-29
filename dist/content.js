@@ -3,7 +3,6 @@
 window.PORTFOLIO = {
   contacts: [
     { label: '이메일', text: 'cyb050602@gmail.com', url: 'mailto:cyb050602@gmail.com' },
-    { label: '전화번호', text: '010-3059-3201', url: 'tel:01030593201' },
     { label: 'GitHub', text: 'Evan-0602-sudo/youngbin-portfolio', url: 'https://github.com/Evan-0602-sudo/youngbin-portfolio' }
   ],
   coreGames: [
@@ -851,6 +850,20 @@ window.PORTFOLIO = {
       { "topic": "아레나", "value": "6,658회", "detail": "과거 최고 티어·승률은 확인 불가", "meaning": "정확한 성취보다 경쟁 콘텐츠 참여 강도의 근거" },
       { "topic": "모험 진행", "value": "일반 442 · 어둠 405", "detail": "현재 왕국 기록 화면", "meaning": "수집과 결제가 실제 콘텐츠 진행으로 이어진 정황" }
     ],
+    "monthlySpend": [
+      { "month": "21.06", "amount": 1200 },
+      { "month": "21.09", "amount": 2500 },
+      { "month": "21.11", "amount": 5900 },
+      { "month": "21.12", "amount": 5900 },
+      { "month": "22.01", "amount": 47100 },
+      { "month": "22.02", "amount": 5900 },
+      { "month": "22.03", "amount": 14700 },
+      { "month": "22.04", "amount": 23200 },
+      { "month": "22.05", "amount": 23000 },
+      { "month": "22.06", "amount": 3900 },
+      { "month": "22.07", "amount": 12100 },
+      { "month": "22.10", "amount": 16400 }
+    ],
     "takeaways": [
       { "title": "정기 패스와 출시 상품이 서로 다른 구매 계기를 만들었습니다", "text": "패스는 시즌 단위 반복 구매를, 신규 쿠키와 이벤트 상품은 특정 시점의 추가 구매를 만들었습니다.", "basis": "상품명·결제 날짜 화면" },
       { "title": "결제는 폭넓은 콘텐츠 참여와 함께 나타났습니다", "text": "왕국 성장, 생산 루프, 모험과 아레나 기록이 함께 남아 있어 구매만 하고 떠난 계정과는 다른 이용 깊이를 확인했습니다.", "basis": "왕국·모험 기록 화면" },
@@ -950,24 +963,12 @@ window.PORTFOLIO = {
     "text": "재미, 불편함, 반복 행동, 이벤트, 보상, UI와 유저 반응 관찰"
   },
   {
-    "title": "질문",
-    "text": "왜 이런 행동이 발생하는지 질문"
+    "title": "질문과 가설",
+    "text": "행동의 원인을 질문하고 사실과 구분한 가설 설정"
   },
   {
-    "title": "가설 설정",
-    "text": "가능한 원인을 가설로 설정"
-  },
-  {
-    "title": "분석",
-    "text": "게임 데이터, 시스템, BM, 경쟁 게임과 유저 반응 조사"
-  },
-  {
-    "title": "개선안 제안",
-    "text": "근거를 바탕으로 개선안 제시"
-  },
-  {
-    "title": "검증",
-    "text": "효과를 검증하고 부작용과 한계도 검토"
+    "title": "분석과 제안",
+    "text": "자료를 교차 확인하고 개선안·지표·부작용을 함께 설계"
   }
 ],
   "dataAnalysis": {
@@ -1004,24 +1005,16 @@ window.PORTFOLIO = {
     "text": "문제와 목표를 먼저 직접 정의"
   },
   {
-    "title": "질문 설계",
-    "text": "필요한 프롬프트와 질문 작성"
-  },
-  {
-    "title": "자료 탐색",
-    "text": "AI로 아이디어와 자료 탐색"
+    "title": "탐색과 정리",
+    "text": "AI로 질문을 확장하고 자료와 초안을 구조화"
   },
   {
     "title": "직접 검증",
     "text": "AI가 제시한 정보와 결과를 직접 검토"
   },
   {
-    "title": "보완",
-    "text": "본인의 판단과 경험을 반영해 수정"
-  },
-  {
-    "title": "결과물 제작",
-    "text": "분석자료, 데이터, 문서, 웹사이트 등 결과물 제작"
+    "title": "판단과 결과물",
+    "text": "본인의 판단으로 수정하고 분석 문서와 웹사이트로 제작"
   }
 ],
   "skills": [
