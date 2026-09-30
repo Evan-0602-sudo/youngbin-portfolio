@@ -28,8 +28,8 @@ window.PORTFOLIO = {
   mobileGames: [
     { name: 'Seven Knights Re:BIRTH', genre: '수집형 RPG', duration: '약 7개월', featured: true },
     { name: 'CookieRun: Kingdom', genre: '수집형 RPG / 건설', duration: '결제 기록 기준 최소 1년 4개월', featured: true },
-    { name: 'GODDESS OF VICTORY: NIKKE', genre: '슈팅 RPG', duration: '약 3개월째', note: '플레이 중' },
-    { name: 'Brown Dust 2', genre: '턴제 RPG', duration: '최근 시작', note: '현재 지속적으로 플레이 중' }
+    { name: 'GODDESS OF VICTORY: NIKKE', genre: '슈팅 RPG', duration: '약 3개월', note: '2026.09.30 플레이 종료', description: '진행 정체 구간에서 일일 반복이 강제 숙제처럼 느껴지고, 무료 지원 캐릭터를 활용해도 새롭게 즐길 콘텐츠를 찾지 못해 중단' },
+    { name: 'Brown Dust 2', genre: '턴제 RPG', duration: '약 1개월째', note: '현재 플레이 중', description: '지속적인 무료 모집과 여러 종류의 일일 콘텐츠를 통해 수집과 플레이를 이어가는 중' }
   ],
   pastMobileGames: ['Monster Taming (몬스터길들이기)', '모두의마블', '무한의계단'],
   "caseStudies": [
