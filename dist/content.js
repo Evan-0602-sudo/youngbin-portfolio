@@ -3,7 +3,7 @@
 window.PORTFOLIO = {
   contacts: [
     { label: '이메일', text: 'cyb050602@gmail.com', url: 'mailto:cyb050602@gmail.com' },
-    { label: 'GitHub', text: 'Evan-0602-sudo/youngbin-portfolio', url: 'https://github.com/Evan-0602-sudo/youngbin-portfolio' }
+    { label: 'GitHub', text: '포트폴리오 제작 자료', url: 'https://github.com/Evan-0602-sudo/youngbin-portfolio' }
   ],
   coreGames: [
     { name: 'League of Legends', genre: 'MOBA / AOS', metric: '5,560', unit: 'HOURS', period: '시즌 3부터 장기간 플레이', detail: '2개 계정 화면 합산 · 이용 주체는 자기 보고', description: '솔로 랭크 신뢰 하락 이후 대체 모드와 친구 플레이로 잔존한 장기 이용 경험', tags: ['랭크 이탈', '모드 리텐션'] },
